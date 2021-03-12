@@ -152,3 +152,4 @@ def test_scenario():
         )
     ) == False
 
+test_scenario()
