@@ -1,6 +1,6 @@
 from copy import deepcopy
 from typing import Callable, List, Optional
-from .tic_tac_toe_common_lib import TicTacToeTurn, TicTacToeGameInfo, AbstractTicTacToeGame
+from game_engine.tic_tac_toe_common_lib import TicTacToeTurn, TicTacToeGameInfo, AbstractTicTacToeGame
 
 
 class TicTacToeGame(AbstractTicTacToeGame):

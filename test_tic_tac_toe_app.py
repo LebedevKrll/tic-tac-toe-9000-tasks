@@ -1,5 +1,5 @@
-from game_app import TicTacToeApp
-from game_engine import TicTacToeGameInfo, TicTacToeTurn
+from game_app.app import TicTacToeApp
+from game_engine.tic_tac_toe_common_lib import TicTacToeGameInfo, TicTacToeTurn
 
 def test_1():
     app = TicTacToeApp()

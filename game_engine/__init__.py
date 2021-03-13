@@ -1,2 +1,3 @@
-from .tic_tac_toe_common_lib import TicTacToeGameInfo, TicTacToeTurn, AbstractTicTacToeGame
-from .tic_tac_toe_game import TicTacToeGame
+from game_engine.tic_tac_toe_common_lib import TicTacToeGameInfo, TicTacToeTurn, AbstractTicTacToeGame
+from game_engine.tic_tac_toe_game import TicTacToeGame
+from game_engine.tic_tac_toe_strategy import strategy
