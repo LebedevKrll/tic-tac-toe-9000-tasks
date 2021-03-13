@@ -1,7 +1,8 @@
 from typing import Dict
 import uuid
 
-from game_engine import TicTacToeGame, TicTacToeGameInfo, TicTacToeTurn
+from game_engine.tic_tac_toe_common_lib import TicTacToeGameInfo, TicTacToeTurn
+from game_engine.tic_tac_toe_game import TicTacToeGame
 
 
 class TicTacToeApp:
@@ -11,7 +12,7 @@ class TicTacToeApp:
         self._games: Dict[str, TicTacToeGame] = {}
 
     def start_game(self, first_player_id: str, second_player_id: str) -> TicTacToeGameInfo:
-        return TicTacToeGame(game_id=uuid.uuid4(), first_player_id=first_player_id, second_player_id=second_player_id).get_game_info()
+        return TicTacToeGame(game_id=str(uuid.uuid4()), first_player_id=first_player_id, second_player_id=second_player_id).get_game_info()
 
     def get_game_by_id(self, game_id: str) -> TicTacToeGameInfo:
         dict_elem = self._games.get(game_id)

@@ -1,4 +1,5 @@
-from game_engine import TicTacToeGame, TicTacToeGameInfo, TicTacToeTurn
+from game_engine.tic_tac_toe_common_lib import TicTacToeGameInfo, TicTacToeTurn
+from game_engine.tic_tac_toe_game import TicTacToeGame
 
 def test_scenario():
     game = TicTacToeGame(
@@ -151,5 +152,3 @@ def test_scenario():
             y_coordinate=2
         )
     ) == False
-
-test_scenario()
