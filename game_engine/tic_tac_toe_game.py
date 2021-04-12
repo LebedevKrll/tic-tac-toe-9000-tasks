@@ -1,7 +1,6 @@
 from copy import deepcopy
 from typing import Callable, List, Optional
-from game_engine.tic_tac_toe_common_lib import TicTacToeTurn, TicTacToeGameInfo, AbstractTicTacToeGame
-
+from .tic_tac_toe_common_lib import AbstractTicTacToeGame, TicTacToeGameInfo, TicTacToeTurn
 
 class TicTacToeGame(AbstractTicTacToeGame):
     """Наследуемся от абстрактного класса и реализуем ручками все методы"""
@@ -55,10 +54,12 @@ class TicTacToeGame(AbstractTicTacToeGame):
 
         field = self.get_game_info().field
 
+        draw = True
+
         for i in range(3):
             row1 = []
             row2 = []
-
+    
             for j in range(3):
                 row1.append(field[i][j])
                 row2.append(field[j][i])
@@ -76,7 +77,6 @@ class TicTacToeGame(AbstractTicTacToeGame):
 
         row1 = []
         row2 = []
-        draw = True
 
         for i in range(3):
             row1.append(field[i][i])

@@ -3,7 +3,8 @@ from game_engine.tic_tac_toe_common_lib import TicTacToeGameInfo, TicTacToeTurn
 
 def test_1():
     app = TicTacToeApp()
-    game_id_PV = app.start_game("Petya", "Vasya").game_id
+    app.start_game('Petya', 'Vasya')
+    game_id_PV = list(app._games.keys())[0]
     assert len(game_id_PV) > 30
     assert app.get_game_by_id(game_id_PV) == TicTacToeGameInfo(
         game_id = game_id_PV,
@@ -39,6 +40,7 @@ def test_1():
     app.do_turn(TicTacToeTurn("Petya", 2, 1), game_id_PV)
     app.do_turn(TicTacToeTurn("Vasya", 2, 2), game_id_PV)
     app.do_turn(TicTacToeTurn("Petya", 1, 2), game_id_PV)
+    print(app.get_game_by_id(game_id_PV))
     assert app.get_game_by_id(game_id_PV) == TicTacToeGameInfo(
         game_id = game_id_PV,
         field=[
@@ -58,7 +60,7 @@ def test_1():
         ],
         first_player_id="Petya",
         second_player_id="Vasya",
-        winner_id="Draw"
+        winner_id="draw"
     )
     assert app.get_game_by_id(game_id_PV2) == TicTacToeGameInfo(
         game_id = game_id_PV2,
