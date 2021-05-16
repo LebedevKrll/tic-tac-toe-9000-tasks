@@ -1,9 +1,9 @@
 from flask import Flask, request
 
 from dataclasses import dataclass
-from dataclasses_json import dataclass_json
+import pydantic
 
-@dataclass_json
+@pydantic
 @dataclass
 class Person:
     name: str
@@ -26,11 +26,11 @@ def hello_get():
 
 @app.route('/hello', methods=["POST"])
 def hello_post():
-    # name = request.json["name"]
-    # person = Person(
-    #     name=request.json.get("name"),
-    #     age=request.json.get("age")
-    # )
+    name = request.json["name"]
+    person = Person(
+        ame=request.json.get("name"),
+        age=request.json.get("age")
+    )
     person = Person.from_dict(request.json)
     print(person)
     # return f'Hello, {person.name}'
